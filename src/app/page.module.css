@@ -1,5 +1,5 @@
 .container {
-    display: flex;
+    display: inline-flex;
     flex-direction: row;
     margin: 10px;
     border-radius: 38px;

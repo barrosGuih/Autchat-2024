@@ -1,5 +1,10 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
+import style from './Components/navbar/page.module.css'
+import style2 from './page.module.css'
+import Image from "next/image";
+import Mano from '../../public/perfil.png'
+import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -11,7 +16,37 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={style2.container}>
+      <div className={style.container}>
+        <div className={style.conteudo}>
+        <div className={style.ajustes}>
+          <Image className={style.imgPerfil}
+            src={Mano}
+            width={150}
+            height={150}
+          ></Image>
+          <h1 className={style.hello}>@Sicrano</h1>
+        </div>
+        <button className={style.configbutao}>Configurações</button>
+
+        </div>
+        <Link href='/alunos'>
+          <button 
+            className={style.configbutao1}
+          >Procurar Usuarios</button>
+        </Link>
+        <button 
+        className={style.configbutao1}>Chat</button>
+        <button 
+        className={style.configbutao1}>Ajuda</button>
+        <button 
+        className={style.configbutao1}>Tarefas</button>
+
+      </div>
+
+        {children}
+        
+        </body>
     </html>
   );
 }
